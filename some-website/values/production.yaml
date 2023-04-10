@@ -1,0 +1,5 @@
+frontend:
+  replicas: 3
+  imageVersion: latest
+  hostUrlWildcard: "*.YOUR_DOMAIN"
+  hostUrl: "www.YOUR_DOMAIN"

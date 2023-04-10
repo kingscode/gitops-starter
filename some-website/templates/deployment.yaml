@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: some-website-frontend
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: some-website-frontend
+spec:
+  replicas: {{ .Values.frontend.replicas}}
+  selector:
+    matchLabels:
+      app: some-website-frontend
+  template:
+    metadata:
+      labels:
+        app: some-website-frontend
+    spec:
+      containers:
+        - name: some-website-frontend
+          image:  "{{ .Values.frontend.imageName }}:{{ .Values.frontend.imageVersion }}"
+          ports:
+            - containerPort: 8080

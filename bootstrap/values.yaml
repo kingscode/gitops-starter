@@ -1,0 +1,4 @@
+spec:
+  repository: git@github.com:GITOPS_REPO
+  destination:
+    server: https://kubernetes.default.svc

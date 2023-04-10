@@ -1,0 +1,9 @@
+general:
+  gcp_project: YOUR_PROJECT_ID
+  issuerName: letsencrypt-production
+https:
+  secretName: argocd-https-tls
+  hostName: argocd.YOUR_DOMAIN
+grpc:
+  secretName: argocd-grpc-tls
+  hostName: grpc.argocd.YOUR_DOMAIN

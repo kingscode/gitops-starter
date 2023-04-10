@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: some-website-frontend
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    app: some-website-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
