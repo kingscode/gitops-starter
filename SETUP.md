@@ -83,7 +83,7 @@ cat id_rsa.pub
 ```
 First add the deploy-key, then add the repository to ArgoCD:
 ```shell
-argocd repo add git@github.com:kingscode/kingscode-website-gitops --insecure-ignore-host-key --ssh-private-key-path ./id_rsa --name gitops
+argocd repo add git@github.com:GITOPS_REPO --insecure-ignore-host-key --ssh-private-key-path ./id_rsa --name gitops
 ```
 
 You can now remove the `id_rsa`/`id_rsa.pub` keys from your project folder.
@@ -97,7 +97,7 @@ _Note:_ First commit your changes, because this command will trigger a sync from
 argocd app create bootstrap \
     --dest-namespace argocd \
     --dest-server https://kubernetes.default.svc \
-    --repo ssh://git@github.com/kingscode/kingscode-website-gitops \
+    --repo ssh://git@github.com/GITOPS_REPO \
     --path bootstrap \
     --sync-policy automated --auto-prune
 ```
