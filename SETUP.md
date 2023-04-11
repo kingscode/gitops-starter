@@ -39,7 +39,7 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 
 ### Set up the cert manager for dns challenges:
 ```shell
-PROJECT_ID=kingscode-app
+PROJECT_ID=YOUR_PROJECT_ID
 gcloud config set project $PROJECT_ID
 gcloud iam service-accounts create dns01-solver --display-name "dns01-solver"
 gcloud projects add-iam-policy-binding $PROJECT_ID \
