@@ -1,0 +1,11 @@
+apt-key.gpg
+.idea
+*.bkp
+*.dtmp
+
+# Created during argocd repository setup process
+id_rsa
+id_rsa.pub
+
+# Created during cert manager setup process
+key.json
