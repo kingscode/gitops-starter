@@ -62,7 +62,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 ### Prepare ingress for ArgoCD:
 To run ArgoCD via a URL (which is created via de `argocd` bootstrapped application), the backend needs to run insecurely. Because the HTTPS certificate will be managed by Let's Encrypt.
 
-Update the `` configmap to allow insecure connections:
+Update the `argocd-cmd-params-cm` configmap to allow insecure connections:
 ```yaml
 data:
   server.insecure: "true"
