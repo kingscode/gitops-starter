@@ -4,4 +4,3 @@ general:
 frontend:
   imageRepo: hub.docker.com
   imageName: nginx
-  secretName: https-tls

@@ -4,6 +4,9 @@ This repository is used by ArgoCD to implement the Helm charts into the kubernet
 # Setup
 Follow the [SETUP.md](../main/SETUP.md) file.
 
+$ Notifications
+Follow the [NOTIFICATIONS.md](../main/NOTIFICATIONS.md) file to setup ArgoCD notifications to slack.
+
 # Flow
 
 See image for the flow of deploying applications:<br/>

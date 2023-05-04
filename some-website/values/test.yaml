@@ -1,3 +1,4 @@
+environment: test
 frontend:
   replicas: 1
   imageVersion: latest

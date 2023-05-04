@@ -53,10 +53,12 @@ kubectl create secret generic clouddns-dns01-solver-svc-acct \
 ```
 You can now remove the `key.json` file from your project folder.
 
-### Install ArgoCD using kubectl:
+### Install ArgoCD using helm:
 ```shell
 kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+helm repo add argo https://argoproj.github.io/argo-helm
+helm repo update
+helm install argocd argo/argo-cd --namespace argocd
 ```
 
 ### Prepare ingress for ArgoCD:
