@@ -23,15 +23,6 @@ Then remove the `## Setup repository` section from this document.
 
 No commands yet, use the cloud-console for now...
 
-### Install nginx controller using helm:
-```shell
-kubectl create namespace nginx-ingress
-helm repo add nginx-stable https://helm.nginx.com/stable
-helm repo update
-helm install nginx-ingress nginx-stable/nginx-ingress --namespace nginx-ingress
-```
-_Wait for the nginx controller to be ready. When it as a public IP address, link your domain(s) to this IP._
-
 ### Install Cert manager using kubectl:
 ```shell
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.2/cert-manager.yaml
@@ -101,8 +92,9 @@ argocd app create bootstrap \
     --dest-server https://kubernetes.default.svc \
     --repo ssh://git@github.com/GITOPS_REPO \
     --path bootstrap \
-    --sync-policy automated --auto-prune
+    --sync-policy automated --auto-prune --self-heal
 ```
+_Wait for the nginx controller to be ready. When it as a public IP address, link your domain(s) to this IP._
 
 ### Login to ArgoCD
 
@@ -123,3 +115,7 @@ When logged in, go to:
 Deploy something! Checkout the `some-website` folder for an example (and remove the example afterward)  
 
 Also, RTFM: https://argo-cd.readthedocs.io/en/stable/ 
+
+
+Additionally, check this for Cloud SQL and make a separate doc about it:
+https://cloud.google.com/sql/docs/mysql/connect-kubernetes-engine
